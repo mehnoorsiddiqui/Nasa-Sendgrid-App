@@ -1,4 +1,5 @@
 server/node_modules/
 server/package-lock.json
+server/.env
 Twilio+SendGrid+v3+API+New/node_modules/
 Twilio+SendGrid+v3+API+New/package-lock.json
