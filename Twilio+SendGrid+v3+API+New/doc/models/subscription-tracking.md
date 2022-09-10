@@ -1,0 +1,29 @@
+
+# Subscription Tracking
+
+Allows you to insert a subscription management link at the bottom of the text and HTML bodies of your email. If you would like to specify the location of the link within your email, you may use the `substitution_tag`.
+
+## Structure
+
+`SubscriptionTracking`
+
+## Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `enable` | `boolean \| undefined` | Optional | Indicates if this setting is enabled. |
+| `text` | `string \| undefined` | Optional | Text to be appended to the email with the subscription tracking link. You may control where the link is by using the tag <% %> |
+| `html` | `string \| undefined` | Optional | HTML to be appended to the email with the subscription tracking link. You may control where the link is by using the tag <% %> |
+| `substitutionTag` | `string \| undefined` | Optional | A tag that will be replaced with the unsubscribe URL. for example: `[unsubscribe_url]`. If this parameter is used, it will override both the `text` and `html` parameters. The URL of the link will be placed at the substitution tag’s location with no additional formatting. |
+
+## Example (as JSON)
+
+```json
+{
+  "enable": null,
+  "text": null,
+  "html": null,
+  "substitution_tag": null
+}
+```
+
