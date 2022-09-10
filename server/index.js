@@ -3,10 +3,9 @@ require('dotenv').config()
 
 const client = new Client({
     timeout: 0,
-    accessToken: process.env.SENDGRID_API_KEY,
+    accessToken: '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',
 })
 const mailSendController = new MailSendController(client);
-
 
 const body = {
     personalizations: [
@@ -37,6 +36,7 @@ const mailSend = async () => {
         const { result, ...httpResponse } = await mailSendController.pOSTMailSend(body);
         console.log('email sent')
     } catch (error) {
+    console.log(error)
         if (error instanceof ApiError) {
             const errors = error.result;
             
@@ -44,3 +44,4 @@ const mailSend = async () => {
     }
 }
 mailSend();
+ 
