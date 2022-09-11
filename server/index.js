@@ -11,7 +11,7 @@ const body = {
     personalizations: [
         {
             to: [
-                {
+                {// change this email to receive messages 
                     email: 'mehnoorsiddiqui9@gmail.com',
                     name: 'Mehnoor Siddiqui'
                 }

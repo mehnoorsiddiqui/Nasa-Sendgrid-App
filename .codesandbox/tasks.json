@@ -1,17 +1,17 @@
 {
   // These tasks will run in order when initializing your CodeSandbox project.
-  //   "setupTasks": [
-  //     {
-  //       "name": "Install Dependencies",
-  //       "command": "npm install"
-  //     }
-  //   ],
+  // "setupTasks": [
+  //   {
+  //     "name": "change the direcotory",
+  //     "command": "cd server"
+  //   }
+  // ],
 
   // These tasks can be run from CodeSandbox. Running one will open a log in the app.
   "tasks": {
-    "./server/index.js": {
-      "name": "./server/index.js",
-      "command": "node index.js",
+    "run project": {
+      "name": "run project",
+      "command": "cd server &&  node index.js",
       "runAtStart": true
     }
   }
