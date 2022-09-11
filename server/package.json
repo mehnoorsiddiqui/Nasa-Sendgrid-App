@@ -11,7 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "nasa-epic-apilib": "../NASA+EPIC+API+SDK",
     "twilio-sendgrid-v-3-apilib": "../Twilio+SendGrid+v3+API+New"
   }
 }

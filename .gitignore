@@ -1,5 +1,12 @@
 server/node_modules/
 server/package-lock.json
 server/.env
+
+client/node_modules/
+client/package-lock.json
+
 Twilio+SendGrid+v3+API+New/node_modules/
 Twilio+SendGrid+v3+API+New/package-lock.json
+
+NASA+EPIC+API+SDK/node_modules/
+NASA+EPIC+API+SDK/package-lock.json
