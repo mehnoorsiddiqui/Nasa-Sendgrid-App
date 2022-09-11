@@ -3,7 +3,7 @@ require('dotenv').config()
 
 const client = new Client({
     timeout: 0,
-    accessToken: process.env,SEND_GRID_KEY,
+    accessToken: process.env.SEND_GRID_KEY,
 })
 const mailSendController = new MailSendController(client);
 
