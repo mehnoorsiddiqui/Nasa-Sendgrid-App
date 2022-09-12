@@ -1,21 +1,21 @@
 const { ApiError, Client, MailSendController } = require('twilio-sendgrid-v-3-apilib');
-require('dotenv').config()
+require('dotenv').config({ path: 'sendgrid.env' })
 
 const client = new Client({
     timeout: 0,
-    accessToken: process.env.SEND_GRID_KEY,
+    accessToken: process.env.SENDGRID_API_KEY,
 })
 const mailSendController = new MailSendController(client);
 
 
-const mailSend = async (base64Img) => {
+const mailSend = async (emailTo) => {
 
     const body = {
         personalizations: [
             {
                 to: [
                     {
-                        email: 'mehnoorsiddiqui9@gmail.com',
+                        email: emailTo,
                         name: 'Mehnoor Siddiqui'
                     }
                 ],
@@ -29,18 +29,20 @@ const mailSend = async (base64Img) => {
         content: [
             {
                 type: 'text/html',
-                value: '<html><body><img src=\"cid:myimagecid\"/></body></html>'
+                // value: '<html><body><img src=\"cid:myimagecid\"/></body></html>'
+                value: '<html><body>hello there</body></html>'
+
             }
         ],
-        attachments: [
-            {
-                content: base64Img,
-                type: 'image/png',
-                filename: 'earth.png',
-                disposition: 'inline',
-                contentId: 'myimagecid'
-            }
-        ]
+        // attachments: [
+        //     {
+        //         content: base64Img,
+        //         type: 'image/png',
+        //         filename: 'earth.png',
+        //         disposition: 'inline',
+        //         contentId: 'myimagecid'
+        //     }
+        // ]
     };
     try {
         const { result, ...httpResponse } = await mailSendController.pOSTMailSend(body);
@@ -55,4 +57,5 @@ const mailSend = async (base64Img) => {
     }
 }
 
-module.exports = mailSend;
+// module.exports = mailSend;
+mailSend("mehnoorsiddiqui9@gmail.com")

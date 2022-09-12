@@ -5,7 +5,7 @@ const api = Router();
 
 api.get("/emailImage", async (req, res) => {
     const base64Img = await getSingleImage();
-    const emailImage = await mailSend(base64Img);
+    const emailImage = await mailSend(base64Img,req.query.userEmail);
     res.send({ emailMeg: emailImage })
 });
 
