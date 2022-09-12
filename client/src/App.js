@@ -1,5 +1,5 @@
 import './App.css';
-import Globe from './components/Globe';
+import Home from './components/Home';
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -7,7 +7,7 @@ import Globe from './components/Globe';
 function App() {
   return (
     <>
-      <Globe />
+      <Home />
     </>
   );
 }

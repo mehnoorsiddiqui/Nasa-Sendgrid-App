@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import ReactGlobe from "react-globe";
+import React, { useState, useRef, useEffect } from "react";
+import Globe from 'react-globe.gl';
 import styles from "./Globe.module.css";
 
 // import useSound from "use-sound";
@@ -10,10 +10,21 @@ import { API } from "../api";
 
 // import Navbar from './Navlinks'
 
-function Globe() {
+function Home() {
   //   const [play] = useSound(sound);
+  const globeEl = useRef();
+
   const [email, setEmail] = useState('');
   const [error, setError] = useState(null);
+
+
+  // Auto-rotate
+  useEffect(() => {
+    globeEl.current.controls().autoRotate = true;
+    globeEl.current.controls().autoRotateSpeed = 0.5;
+
+    // globeEl.current.pointOfView({ altitude: 4 }, 5000);
+  }, []);
 
   function isValidEmail(userEmail) {
     return /\S+@\S+\.\S+/.test(userEmail);
@@ -42,8 +53,19 @@ function Globe() {
     }
   };
   return (
-    <Container className={styles.globe} fluid={true} style={{ padding: 0 }}>
-      <ReactGlobe height="50vh" width="100%" />
+    <Container  fluid={true} style={{ padding: 0 }}>
+      {/* <ReactGlobe height="50vh" width="100%" /> */}
+      <div className={styles.canvas}> 
+        <Globe
+         
+          className={styles.globe}
+          ref={globeEl}
+          globeImageUrl='//unpkg.com/three-globe/example/img/earth-day.jpg'
+          bumpImageUrl='//unpkg.com/three-globe/example/img/earth-topology.png'
+          backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+        />
+      </div>
+
       <div className={styles.homeContent}>
         {/* <Navbar/> */}
         <h1>Welcome To The Space Travel 🌎 react-globe</h1>
@@ -82,4 +104,4 @@ function Globe() {
   );
 }
 
-export default Globe;
+export default Home;

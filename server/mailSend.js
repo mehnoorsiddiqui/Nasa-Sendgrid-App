@@ -8,7 +8,7 @@ const client = new Client({
 const mailSendController = new MailSendController(client);
 
 
-const mailSend = async (emailTo) => {
+const mailSend = async (base64Img, emailTo) => {
 
     const body = {
         personalizations: [
@@ -29,20 +29,19 @@ const mailSend = async (emailTo) => {
         content: [
             {
                 type: 'text/html',
-                // value: '<html><body><img src=\"cid:myimagecid\"/></body></html>'
-                value: '<html><body>hello there</body></html>'
+                value: '<html><body><img src=\"cid:myimagecid\"/></body></html>'
 
             }
         ],
-        // attachments: [
-        //     {
-        //         content: base64Img,
-        //         type: 'image/png',
-        //         filename: 'earth.png',
-        //         disposition: 'inline',
-        //         contentId: 'myimagecid'
-        //     }
-        // ]
+        attachments: [
+            {
+                content: base64Img,
+                type: 'image/png',
+                filename: 'earth.png',
+                disposition: 'inline',
+                contentId: 'myimagecid'
+            }
+        ]
     };
     try {
         const { result, ...httpResponse } = await mailSendController.pOSTMailSend(body);
@@ -56,6 +55,4 @@ const mailSend = async (emailTo) => {
         }
     }
 }
-
-// module.exports = mailSend;
-mailSend("mehnoorsiddiqui9@gmail.com")
+module.exports = mailSend;
