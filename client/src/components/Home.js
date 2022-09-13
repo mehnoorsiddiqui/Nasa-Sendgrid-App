@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Globe from 'react-globe.gl';
-import styles from "./Globe.module.css";
+import styles from "./Home.module.css";
 import { Container } from "react-bootstrap";
 import { API } from "../api";
 
@@ -44,11 +44,10 @@ function Home() {
         backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
       />
 
-
       <div className={styles.homeContent}>
 
-        <h1>Welcome To The Space Travel 🌎 </h1>
-        <p>⭐🌟☄🌠🌟☀🌌🪐🌍🌚🌙🌕</p>
+        <h1>Million Mile Views via a NASA API 🌎 </h1>
+        <p>⭐🌟☄🌠🌟🌌🪐🌍🌚🌙🌕</p>
         <div className={styles.buttons}>
 
         </div>
@@ -60,22 +59,19 @@ function Home() {
             placeholder="Enter your email"
             value={email}
             onChange={validateEmail}
-            className={styles.button}
+            className={styles.input}
           />
 
-
-
-          {error && <p style={{ color: 'red' }}>{error}</p>}
+          {error && <p  className={styles.error}>{error}</p>}
 
           <button className={styles.button} onClick={handleEmail}>
             Email me a picture from nasa
           </button>
 
-          <p>
-            SpaceTravel app is built with APIMatic SDK. It isusing the NASA API and Sendgrid API for displaying the
+          <p className={styles.description}>
+             App is built with APIMatic SDK. It is using the NASA API and Sendgrid API for displaying the
             contents(images/text)
           </p>
-          <p>For more details about the project check the Article series.🌠</p>
         </Container>
       </div>
     </Container>

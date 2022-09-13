@@ -7,7 +7,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
   background: #030303;
-
 }
 .homeContent h1 {
   margin: auto;
@@ -26,7 +25,7 @@
   display: block;
   padding: 15px 25px;
   font-size: 18px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   cursor: pointer;
   text-shadow: 0 0px 5px #555;
   text-decoration: none;
@@ -49,6 +48,27 @@
 .buttons a:hover {
   text-decoration: none;
 }
+.input {
+  display: block;
+  width: 30%;
+  padding: 15px 25px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-shadow: 0 0px 5px #555;
+  text-decoration: none;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fafafa;
+  border-radius: 5px;
+  margin: 5px auto;
+}
+
+.input:hover,
+.input:active {
+  box-shadow: 0 0px 5px #555;
+  border-color: #555;
+}
 
 .aboutContent {
   max-width: 55rem !important;
@@ -67,10 +87,9 @@
   text-align: center !important;
   margin: auto;
 }
-.globe{
-  display: inline;
+.error {
+  color: "red";
 }
-.canvas {
-  width: 100%;
-   text-align:center;
+.description {
+  padding: 10%;
 }
